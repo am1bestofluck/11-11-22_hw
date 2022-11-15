@@ -58,17 +58,30 @@ void Main()
     Console.Clear();
     string[] external_todo= File.ReadLines($"../README.MD").ToArray();
     WriteLine(external_todo[1]);//t1 1
-    int recursionBase=ValidateInput("Откуда считаем?");
-    WriteLine(NumberLIneRecursion(recursionBase));
+    T1();
+    void T1()
+    {
+        int recursionBase=ValidateInput("Откуда считаем?");
+        WriteLine(NumberLIneRecursion(recursionBase));
+    }
     Break();
     WriteLine(external_todo[21]);//t2 8
-    int[] valuesT2= new int[2];
-    valuesT2[0]=ValidateInput("Откуда считаем?", iPositive:false);
-    valuesT2[1]=ValidateInput("До какого числа считаем?", iPositive:false);
-    valuesT2[0]=valuesT2[0]>0? valuesT2[0]:0;
-    valuesT2[1]=valuesT2[1]>0? valuesT2[1]:0;//сказано явно, сумма натуральных; больше диагностики = меньше головомойки!
-    WriteLine($"Сумма натуральных чисел: {GetSumOfPositiveRange(numberStart:valuesT2.Min(),numberEnd:valuesT2.Max())}");
+    T2();
+    void T2()
+    {
+        int[] valuesT2= new int[2];
+        valuesT2[0]=ValidateInput("Откуда считаем?", iPositive:false);
+        valuesT2[1]=ValidateInput("До какого числа считаем?", iPositive:false);
+        valuesT2[0]=valuesT2[0]>0? valuesT2[0]:0;
+        valuesT2[1]=valuesT2[1]>0? valuesT2[1]:0;//сказано явно, сумма натуральных; больше диагностики = меньше головомойки!
+        WriteLine($"Сумма натуральных чисел: {GetSumOfPositiveRange(numberStart:valuesT2.Min(),numberEnd:valuesT2.Max())}");
+    }
     Break();
     WriteLine(external_todo[28]);//t3 15
+    T3();
+    void T3()
+    {
+        
+    }
     Break();
 }
