@@ -108,7 +108,7 @@ void Main()
         valuesT2[1]=ValidateInput("До какого числа считаем?", iPositive:false, iIncludeZero:true);
         valuesT2[0]=valuesT2[0]>0? valuesT2[0]:0;
         valuesT2[1]=valuesT2[1]>0? valuesT2[1]:0;//сказано явно, сумма натуральных; больше диагностики = меньше головомойки!
-        int output= valuesT2[0]==valuesT2[0]? 0: GetSumOfPositiveRange(iNumberStart:valuesT2.Min(),iNumberEnd:valuesT2.Max());//чтобы 3 и 3 не давали на выходе 3
+        int output= valuesT2[0]==valuesT2[1]? 0: GetSumOfPositiveRange(iNumberStart:valuesT2.Min(),iNumberEnd:valuesT2.Max());//чтобы 3 и 3 не давали на выходе 3
         WriteLine($"Сумма натуральных чисел: {output}");
     }
     Break();
