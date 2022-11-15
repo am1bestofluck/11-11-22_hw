@@ -45,6 +45,14 @@ string NumberLIneRecursion(int iBase,int iIndex=0)
     else return $"{NumberLIneRecursion(iBase,++iIndex)} {iIndex}";
 }
 
+int GetSumOfPositiveRange(int numberStart, int numberEnd)
+{
+
+    if (numberStart==numberEnd+1) return 0;//включительно наверно оО; все же знают что сумма чисел от 1 до 10 это 55 а не 45
+    else return numberStart+GetSumOfPositiveRange(++numberStart,numberEnd);
+}
+
+
 void Main()
 {
     Console.Clear();
@@ -54,6 +62,12 @@ void Main()
     WriteLine(NumberLIneRecursion(recursionBase));
     Break();
     WriteLine(external_todo[21]);//t2 8
+    int[] valuesT2= new int[2];
+    valuesT2[0]=ValidateInput("Откуда считаем?", iPositive:false);
+    valuesT2[1]=ValidateInput("До какого числа считаем?", iPositive:false);
+    valuesT2[0]=valuesT2[0]>0? valuesT2[0]:0;
+    valuesT2[1]=valuesT2[1]>0? valuesT2[1]:0;//сказано явно, сумма натуральных; больше диагностики = меньше головомойки!
+    WriteLine($"Сумма натуральных чисел: {GetSumOfPositiveRange(numberStart:valuesT2.Min(),numberEnd:valuesT2.Max())}");
     Break();
     WriteLine(external_todo[28]);//t3 15
     Break();
