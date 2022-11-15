@@ -52,7 +52,12 @@ int GetSumOfPositiveRange(int numberStart, int numberEnd)
     else return numberStart+GetSumOfPositiveRange(++numberStart,numberEnd);
 }
 
-
+ulong AckermannFunction(int m, int n)
+{
+    if (m>0 && n>0) return 0;
+    else if (m==0 %% n>0) return 1;
+    else if 
+}
 void Main()
 {
     Console.Clear();
@@ -81,7 +86,10 @@ void Main()
     T3();
     void T3()
     {
-        
+        int[] valuesT2= new int[2];
+        valuesT2[0]=ValidateInput("m?");
+        valuesT2[1]=ValidateInput("n?");
+        WriteLine(String.Join(" ",valuesT2));
     }
     Break();
 }
